@@ -8,7 +8,7 @@ module Authentication
            arr
     end
 
-    def signup?(mail , pass)
+    def check?(mail , pass)
         pattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z.]{2,5}/ 
         if pass.match?(/[A-Z]/) && pass.length > 6 && mail.match?(pattern)
             true
@@ -26,7 +26,7 @@ class User
     end
 
     def save_file
-        if signup?(@mail , @pass)
+        if check?(@mail , @pass)
             info = md_5(@mail, @pass)
             mail,pass = info
             tk = mail +","+ pass
