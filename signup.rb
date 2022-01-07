@@ -20,4 +20,3 @@ class Signup
     end 
 
 end
-Signup.new.signup
